@@ -33,5 +33,16 @@ describe '#Word' do
       expect(Word.all).to(eq([word1, word2]))
     end
   end
+
+  describe('==') do
+    it("will allow '==' to equate two Word objects with the same name") do
+      word1 = Word.new({word: "bamboozle", id: nil})
+      word1.save()
+      word4 = Word.new({word: "bamboozle", id: nil})
+      word4.save()
+      expect(word1).to(eq(word4))
+    end
+  end
+
 end
 
