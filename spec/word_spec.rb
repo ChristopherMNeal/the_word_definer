@@ -44,5 +44,11 @@ describe '#Word' do
     end
   end
 
+  describe('.clear') do
+    it("will clear all words saved in @@words class variable") do
+      expect(Word.all).to(eq([]))
+    end
+  end
+
 end
 
