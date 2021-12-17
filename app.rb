@@ -6,15 +6,18 @@ also_reload('lib/**/*.rb')
 require('./lib/definition')
 
 get('/') do
-
+  @words = Word.all
+  erb(:words)
 end
 
 get('/words') do
-  
+  @words = Word.all
+  erb(:words)
 end
 
 get('words/new') do
 
+  redirect to('/words')
 end
 
 get('words/:id') do

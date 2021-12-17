@@ -1,0 +1,14 @@
+<h1>The Word Definer</h1>
+
+<h3>Words:</h3>
+<% if @words.any? %>
+  <ul>
+    <% @words.each do |each_word| %>
+      <li><%= each_word.word %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no words to display</p>
+<% end %>
+
+<a href="/albums/new">Add a new word</a>
