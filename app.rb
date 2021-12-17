@@ -19,9 +19,9 @@ get('/words/new') do
   erb(:new_word)
 end
 
-get('words/:id') do
-  @words = Word.find(params[:id].to_i())
-  redirect to('/words')
+get('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
 end
 
 post('/words') do
@@ -39,7 +39,6 @@ end
 patch('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @word.update(params[:word])
-  @words = Word.all
   redirect to('/words')
 end
 
