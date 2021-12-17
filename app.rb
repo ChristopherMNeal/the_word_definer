@@ -15,9 +15,8 @@ get('/words') do
   erb(:words)
 end
 
-get('words/new') do
-
-  redirect to('/words')
+get('/words/new') do
+  erb(:new_word)
 end
 
 get('words/:id') do
@@ -25,7 +24,10 @@ get('words/:id') do
 end
 
 post('/words') do
-
+  add_word = params[:word_to_add]
+  word = Word.new({word: add_word})
+  word.save()
+  redirect to('/words')
 end
 
 get('/words/:id/edit') do
@@ -36,7 +38,7 @@ patch('/words/:id') do
 
 end
 
-delete('/albums/:id') do
+delete('/words/:id') do
 
 end
 
