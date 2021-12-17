@@ -16,4 +16,9 @@ class Definition
     @@definitions.values()
   end
 
+  def save
+    # @@definitions[self.id] = Definition.new({definition: definition, id: id})
+  end
+
+
 end
