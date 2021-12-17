@@ -20,7 +20,8 @@ get('/words/new') do
 end
 
 get('words/:id') do
-  
+  @words = Word.find(params[:id].to_i())
+  redirect to('/words')
 end
 
 post('/words') do
@@ -41,4 +42,3 @@ end
 delete('/words/:id') do
 
 end
-
