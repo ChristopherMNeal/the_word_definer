@@ -29,7 +29,8 @@ class Word
     @@total_rows = 0
   end
 
-  def self.find(word)
+  def self.find(id)
+    # @@words[id]
   end
   
 

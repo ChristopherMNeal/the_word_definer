@@ -48,10 +48,11 @@ describe '#Word' do
 
   describe('.find') do
     it("will find a word by the word's id") do
+    word2 = Word.new({word: "hoodwink", id: nil})
+    word2.save()
     word3 = Word.new({word: "hornswoggle", id: nil})
     word3.save()
-    expect(Word.id).to(eq(album))
-    # expect(Word.find(1)).to(eq([word3]))
+    expect(Word.find(word3.id)).to(eq(word3))
     end
   end
 end
