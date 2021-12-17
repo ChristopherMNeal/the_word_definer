@@ -64,6 +64,17 @@ describe '#Word' do
       expect(word1.word).to(eq("snooker"))
     end
   end
+
+  describe('#delete') do
+    it("deletes a word") do
+      word1 = Word.new({word: "trick"})
+      word1.save
+      word2 = Word.new({word: "beguile"})
+      word2.save
+      word1.delete()
+      expect(Word.all).to(eq([word2]))
+    end
+  end
 end
 
     # word1 = Word.new({word: "bamboozle", id: nil})
