@@ -35,7 +35,7 @@ describe '#Word' do
   end
 
   describe('==') do
-    it("will allow '==' to equate two Word objects with the same name") do
+    it("will allow '==' to equate two Word objects with the same attributes") do
       word1 = Word.new({word: "bamboozle", id: nil})
       word1.save()
       word4 = Word.new({word: "bamboozle", id: nil})
@@ -46,9 +46,16 @@ describe '#Word' do
 
   describe('.clear') do
     it("will clear all words saved in @@words class variable") do
+      Word.clear()
       expect(Word.all).to(eq([]))
     end
-  end
+    it("will reset the id to start at 1") do
+      Word.clear()
+      word3 = Word.new({word: "hornswoggle", id: nil})
+      word3.save()
+      expect(word3.id)to(eq(1))
+    end
 
+  end
 end
 
