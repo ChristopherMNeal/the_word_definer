@@ -25,11 +25,11 @@ post('/words') do
 
 end
 
-get('/albums/:id/edit') do
+get('/words/:id/edit') do
 
 end
 
-patch('/albums/:id') do
+patch('/words/:id') do
 
 end
 

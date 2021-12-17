@@ -10,4 +10,13 @@ class Word
     @word = attributes.fetch(:word)
     @id = attributes.fetch(:id) || @@total_rows += 1
   end
+
+  def self.all()
+    @@words.values()
+  end
+
+  def self.find(word)
+  end
+  
+
 end
