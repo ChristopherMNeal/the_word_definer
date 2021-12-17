@@ -26,7 +26,7 @@ class Word
 
   def self.clear
     @@words = {}
-    # @@total_rows = 0
+    @@total_rows = 0
   end
 
   def self.find(word)

@@ -53,7 +53,7 @@ describe '#Word' do
       Word.clear()
       word3 = Word.new({word: "hornswoggle", id: nil})
       word3.save()
-      expect(word3.id)to(eq(1))
+      expect(word3.id).to(eq(1))
     end
 
   end
