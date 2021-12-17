@@ -9,13 +9,13 @@ describe '#Word' do
   end
   
   describe('.all') do
-    it("will return all the words in the Word classes, or an empty array if there are none") do
+    it("returns all the words in the Word classes, or an empty array if there are none") do
       expect(Word.all).to(eq([]))
     end
   end
 
   describe('#save') do
-    it("will save a word to the @@words class variable") do
+    it("saves a word to the @@words class variable") do
       word1 = Word.new({word: "bamboozle", id: nil})
       word1.save()
       word2 = Word.new({word: "hoodwink", id: nil})
@@ -25,7 +25,7 @@ describe '#Word' do
   end
 
   describe('==') do
-    it("will allow '==' to equate two Word objects with the same attributes") do
+    it("allows '==' to equate two Word objects with the same attributes") do
       word1 = Word.new({word: "bamboozle", id: nil})
       word4 = Word.new({word: "bamboozle", id: nil})
       expect(word1).to(eq(word4))
@@ -33,7 +33,7 @@ describe '#Word' do
   end
 
   describe('.clear') do
-    it("will clear all words saved in @@words class variable") do
+    it("clears all words saved in @@words class variable") do
       word1 = Word.new({word: "bamboozle", id: nil})
       word1.save()
       Word.clear()
@@ -47,12 +47,21 @@ describe '#Word' do
   end
 
   describe('.find') do
-    it("will find a word by the word's id") do
+    it("finds a word by the word's id") do
     word2 = Word.new({word: "hoodwink", id: nil})
     word2.save()
     word3 = Word.new({word: "hornswoggle", id: nil})
     word3.save()
     expect(Word.find(word3.id)).to(eq(word3))
+    end
+  end
+
+  describe('#update') do
+    it("updates a word's word") do
+      word1 = Word.new({word: "dupe", id: nil})
+      word1.save
+      word1.update("snooker")
+      expect(word1.word).to(eq("snooker"))
     end
   end
 end
