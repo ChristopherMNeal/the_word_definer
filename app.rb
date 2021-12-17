@@ -43,5 +43,7 @@ patch('/words/:id') do
 end
 
 delete('/words/:id') do
-
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  redirect to('/words')
 end
