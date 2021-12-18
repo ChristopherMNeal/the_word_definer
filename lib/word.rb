@@ -23,6 +23,16 @@ class Word
     self.name() == word_to_compare.name()
   end
 
+  def self.search(name_searched)
+    arr_results = []
+    @@words.values.each do |word|
+      if word.name == name_searched
+        arr_results.push(word)
+      end
+    end
+    arr_results
+  end
+
   def self.clear
     @@words = {}
     @@total_rows = 0
