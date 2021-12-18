@@ -1,5 +1,5 @@
 require 'rspec'
-require 'd2'
+require 'defi'
 require 'word'
 require 'pry'
 
@@ -13,7 +13,7 @@ describe '#Defi' do
   end
 
   describe('#==') do
-    it("is the same defi if it has the same attributes as another defi") do
+    it("is the same definition if it has the same attributes as another definition") do
       defi = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
       defi2 = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
       expect(defi).to(eq(defi2))
@@ -21,7 +21,7 @@ describe '#Defi' do
   end
 
   describe('.all') do
-    it("returns a list of all defis") do
+    it("returns a list of all definitions") do
       defi = Defi.new({defi: "to trick someone", word_id: @word.id, id: nil})
       defi.save()
       defi2 = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
@@ -31,7 +31,7 @@ describe '#Defi' do
   end
 
   describe('.clear') do
-    it("clears all defis") do
+    it("clears all definitions") do
       defi = Defi.new({defi: "to trick someone", word_id: @word.id, id: nil})
       defi.save()
       defi2 = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
@@ -42,7 +42,7 @@ describe '#Defi' do
   end
 
   describe('#save') do
-    it("saves a defi") do
+    it("saves a definition") do
       defi = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
       defi.save()
       expect(Defi.all).to(eq([defi]))
@@ -50,7 +50,7 @@ describe '#Defi' do
   end
 
   describe('.find') do
-    it("finds a defi by id") do
+    it("finds a definition by id") do
       defi = Defi.new({defi: "to trick someone", word_id: @word.id, id: nil})
       defi.save()
       defi2 = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
@@ -60,7 +60,7 @@ describe '#Defi' do
   end
 
   describe('#update') do
-    it("updates an defi by id") do
+    it("updates an definition by id") do
       defi = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
       defi.save()
       defi.update("to dupe someone", @word.id)
@@ -69,7 +69,7 @@ describe '#Defi' do
   end
 
   describe('#delete') do
-    it("deletes an defi by id") do
+    it("deletes an definition by id") do
       defi = Defi.new({defi: "to trick someone", word_id: @word.id, id: nil})
       defi.save()
       defi2 = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
@@ -79,7 +79,7 @@ describe '#Defi' do
     end
   end
   describe('.find_by_word') do
-    it("finds defis for an word") do
+    it("finds defitions for an word") do
       word2 = Word.new({defi: "Bamboozle", id: nil})
       word2.save
       defi = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
@@ -91,7 +91,7 @@ describe '#Defi' do
   end
 
   describe('#word') do
-    it("finds the word a defi belongs to") do
+    it("finds the word a definition belongs to") do
       defi = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
       defi.save()
       expect(defi.word()).to(eq(@word))
