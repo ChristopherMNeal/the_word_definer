@@ -39,4 +39,8 @@ class Word
   def delete
     @@words.delete(self.id)
   end
+
+  def defis
+    Defi.find_by_word(self.id)
+  end
 end
