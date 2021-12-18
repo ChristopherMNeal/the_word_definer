@@ -6,6 +6,10 @@ require 'pry'
 describe '#Defintion' do
 
   before(:each) do
+    Word.clear()
+    Defi.clear()
+    @word = Word.new({name: "bamboozle", id: nil})
+    @word.save()
   end
 
   describe('.all') do
@@ -29,7 +33,6 @@ describe '#Defintion' do
       expect(defi1).to(eq(defi2))
     end
   end
-
 
   describe('#save') do
     it("saves a definition to the class variable") do

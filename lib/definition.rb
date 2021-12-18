@@ -7,7 +7,7 @@ class Defi
   @@defis = {}
   @@total_rows = 0
 
-  def initialization(attributes)
+  def initialize(attributes)
     @name = attributes.fetch(:name)
     @word_id = attributes.fetch(:word_id)
     @id = attributes.fetch(:id) || @@total_rows += 1
