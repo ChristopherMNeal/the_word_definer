@@ -17,31 +17,32 @@ describe '#Word' do
 
   describe('#save') do
     it("saves a word to the @@words class variable") do
-      word1 = Word.new({name: "bamboozle"})
+      word1 = Word.new({name: "bamboozle", id: nil})
       word1.save()
-      word2 = Word.new({name: "hoodwink"})
+      word2 = Word.new({name: "hoodwink", id: nil})
       word2.save()
       expect(Word.all).to(eq([word1, word2]))
     end
   end
 
-  describe('==') do
+  describe('#==') do
     it("allows '==' to equate two Word objects with the same attributes") do
-      word1 = Word.new({name: "bamboozle"})
-      word4 = Word.new({name: "bamboozle"})
+      word1 = Word.new({name: "bamboozle", id: nil})
+      word4 = Word.new({name: "bamboozle", id: nil})
       expect(word1).to(eq(word4))
     end
   end
 
   describe('.clear') do
     it("clears all words saved in @@words class variable") do
-      word1 = Word.new({name: "bamboozle"})
+      word1 = Word.new({name: "bamboozle", id: nil})
       word1.save()
       Word.clear()
       expect(Word.all).to(eq([]))
     end
+    
     it("will reset the id to start at 1") do
-      word3 = Word.new({name: "hornswoggle"})
+      word3 = Word.new({name: "hornswoggle", id: nil})
       word3.save()
       expect(word3.id).to(eq(1))
     end
@@ -49,9 +50,9 @@ describe '#Word' do
 
   describe('.find') do
     it("finds a word by the word's id") do
-    word2 = Word.new({name: "hoodwink"})
+    word2 = Word.new({name: "hoodwink", id: nil})
     word2.save()
-    word3 = Word.new({name: "hornswoggle"})
+    word3 = Word.new({name: "hornswoggle", id: nil})
     word3.save()
     expect(Word.find(word3.id)).to(eq(word3))
     end
@@ -59,7 +60,7 @@ describe '#Word' do
 
   describe('#update') do
     it("updates a word's word") do
-      word1 = Word.new({name: "dupe"})
+      word1 = Word.new({name: "dupe", id: nil})
       word1.save
       word1.update("snooker")
       expect(word1.name).to(eq("snooker"))
@@ -68,9 +69,9 @@ describe '#Word' do
 
   describe('#delete') do
     it("deletes a word") do
-      word1 = Word.new({name: "trick"})
+      word1 = Word.new({name: "trick", id: nil})
       word1.save
-      word2 = Word.new({name: "beguile"})
+      word2 = Word.new({name: "beguile", id: nil})
       word2.save
       word1.delete()
       expect(Word.all).to(eq([word2]))
@@ -81,7 +82,7 @@ end
 describe('#defis') do
   it("return a word's definitions") do
     Defi.clear()
-    word1 = Word.new({name: "trick"})
+    word1 = Word.new({name: "trick", id: nil})
     word1.save
     defi1 = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
     defi1.save
