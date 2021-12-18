@@ -27,4 +27,7 @@ class Defi
     @@defis[self.id] = Defi.new({name: name, word_id: word_id, id: id})
   end
 
+  def self.clear
+    @@defis = {}
+  end
 end
