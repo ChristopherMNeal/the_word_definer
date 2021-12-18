@@ -1,5 +1,6 @@
 require 'rspec'
 require 'word'
+require 'definition'
 require 'pry'
 
 describe '#Word' do
@@ -77,13 +78,14 @@ describe '#Word' do
   end
 end
 
-describe('#defi') do
+describe('#defis') do
   it("return a word's definitions") do
+    Defi.clear()
     word1 = Word.new({name: "trick"})
     word1.save
-    defi1 = Defi.new({defi: "to fool someone", word_id: @word.id, id: nil})
+    defi1 = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
     defi1.save
-    defi2 = Defi.new({defi: "to trick someone", word_id: @word.id, id: nil})
+    defi2 = Defi.new({name: "to trick someone", word_id: @word.id, id: nil})
     defi2.save
     expect(word1.defis).to(eq([defi1, defi2]))
   end
