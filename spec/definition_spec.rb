@@ -75,6 +75,15 @@ describe '#Defintion' do
     end
   end
 
+  describe('#update') do
+    it("updates an definition by id") do
+      defi = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
+      defi.save()
+      defi.update("to trick someone", @word.id)
+      expect(defi.name).to(eq("to trick someone"))
+    end
+  end
+
   describe('') do
     it("") do
     end
