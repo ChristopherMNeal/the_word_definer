@@ -31,6 +31,9 @@ class Defi
     @@defis = {}
   end
 
+  def self.find(id)
+  end
+
   def self.find_by_word(wd_id)
     defis = []
     @@defis.values.each do |defi|

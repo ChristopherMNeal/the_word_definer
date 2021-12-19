@@ -52,7 +52,17 @@ describe '#Defintion' do
       expect(Defi.all).to(eq([]))
     end
   end
-  
+
+  describe('.find') do
+    it("finds a definition by id") do
+      defi = Defi.new({name: "to beguile someone", word_id: @word.id, id: nil})
+      defi.save()
+      defi2 = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
+      defi2.save()
+      expect(Defi.find(defi.id)).to(eq(defi))
+    end
+  end
+
   describe('.find_by_word') do
     it("finds definitions for an word") do
       word2 = Word.new({name: "Hoodwink", id: nil})
