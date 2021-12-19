@@ -84,6 +84,17 @@ describe '#Defintion' do
     end
   end
 
+  describe('#delete') do
+    it("deletes an definition by id") do
+      defi = Defi.new({name: "to beguile someone", word_id: @word.id, id: nil})
+      defi.save()
+      defi2 = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
+      defi2.save()
+      defi.delete()
+      expect(Defi.all).to(eq([defi2]))
+    end
+  end
+
   describe('') do
     it("") do
     end

@@ -41,6 +41,9 @@ class Defi
     @@defis[self.id] = Defi.new({name: name, word_id: word_id, id: id})
   end
 
+  def delete
+  end
+
   def self.find_by_word(wd_id)
     defis = []
     @@defis.values.each do |defi|
