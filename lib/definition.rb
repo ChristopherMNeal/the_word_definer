@@ -36,7 +36,9 @@ class Defi
   end
 
   def update(name, word_id)
-
+    self.name = name
+    self.word_id = word_id
+    @@defis[self.id] = Defi.new({name: name, word_id: word_id, id: id})
   end
 
   def self.find_by_word(wd_id)
