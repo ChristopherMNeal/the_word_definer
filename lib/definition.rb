@@ -42,6 +42,7 @@ class Defi
   end
 
   def delete
+    @@defis.delete(self.id)
   end
 
   def self.find_by_word(wd_id)
