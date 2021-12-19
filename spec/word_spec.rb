@@ -40,7 +40,7 @@ describe '#Word' do
       Word.clear()
       expect(Word.all).to(eq([]))
     end
-    
+
     it("will reset the id to start at 1") do
       word3 = Word.new({name: "hornswoggle", id: nil})
       word3.save()
@@ -77,17 +77,17 @@ describe '#Word' do
       expect(Word.all).to(eq([word2]))
     end
   end
-end
 
-describe('#defis') do
-  it("return a word's definitions") do
-    Defi.clear()
-    word1 = Word.new({name: "trick", id: nil})
-    word1.save
-    defi1 = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
-    defi1.save
-    defi2 = Defi.new({name: "to trick someone", word_id: @word.id, id: nil})
-    defi2.save
-    expect(word1.defis).to(eq([defi1, defi2]))
+  describe('#defis') do
+    it("returns a word's definitions") do
+      Defi.clear()
+      word = Word.new({name: "Bamboozle", id: nil})
+      word.save()
+      defi = Defi.new({name: "to fool someone", word_id: word.id, id: nil})
+      defi.save()
+      defi2 = Defi.new({name: "to con someone", word_id: word.id, id: nil})
+      defi2.save()
+      expect(word.defis).to(eq([defi, defi2]))
+    end
   end
 end

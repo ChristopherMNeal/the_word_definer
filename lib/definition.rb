@@ -30,4 +30,14 @@ class Defi
   def self.clear
     @@defis = {}
   end
+
+  def self.find_by_word(wd_id)
+    defis = []
+    @@defis.values.each do |defi|
+      if defi.word_id == wd_id
+        defis.push(defi)
+      end
+    end
+    defis
+  end
 end
