@@ -32,6 +32,7 @@ class Defi
   end
 
   def self.find(id)
+    @@defis[id]
   end
 
   def self.find_by_word(wd_id)
