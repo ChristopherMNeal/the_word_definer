@@ -54,4 +54,7 @@ class Defi
     end
     defis
   end
+
+  def word
+  end
 end

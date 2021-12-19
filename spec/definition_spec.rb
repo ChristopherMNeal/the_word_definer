@@ -95,8 +95,11 @@ describe '#Defintion' do
     end
   end
 
-  describe('') do
-    it("") do
+  describe('#word') do
+    it("finds the word a definition belongs to") do
+      defi = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
+      defi.save()
+      expect(defi.word()).to(eq(@word))
     end
   end
 end
