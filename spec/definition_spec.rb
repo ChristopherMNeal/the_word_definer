@@ -42,6 +42,29 @@ describe '#Defintion' do
     end
   end
 
+  describe('.clear') do
+    it("clears all definitions") do
+      defi = Defi.new({name: "to beguile someone", word_id: @word.id, id: nil})
+      defi.save()
+      defi2 = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
+      defi2.save()
+      Defi.clear()
+      expect(Defi.all).to(eq([]))
+    end
+  end
+  
+  describe('.find_by_word') do
+    it("finds definitions for an word") do
+      word2 = Word.new({name: "Hoodwink", id: nil})
+      word2.save
+      defi = Defi.new({name: "to fool someone", word_id: @word.id, id: nil})
+      defi.save()
+      defi2 = Defi.new({name: "to trick someone", word_id: word2.id, id: nil})
+      defi2.save()
+      expect(Defi.find_by_word(word2.id)).to(eq([defi2]))
+    end
+  end
+
   describe('') do
     it("") do
     end
