@@ -3,8 +3,8 @@
 <h3>Words:</h3>
 <% if @words.any? %>
   <ul>
-    <% @words.each do |each_word| %>
-      <li><a href="/words/<%= each_word.id %>"><%= each_word.name %></a></li>
+    <% @words.each do |word| %>
+      <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
     <% end %>
   </ul>
 <% else %>
@@ -21,6 +21,6 @@
   <button type="submit" class="btn">Submit!</button>
 </form>
 
-<% @words.each do |each_word| %>
-  <li><a href="/words/<%= each_word.id %>"><%= each_word.name %></a></li>
+<% @words.each do |word| %>
+  <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
 <% end %>
