@@ -13,14 +13,16 @@
 
 <a href="/words/new">Add a new word</a>
 
-<form action="/words">
-  <div class="form-group">
-    <label for="search">Search for a word</label>
-    <input id="search" name="search" class="form-control" type="text">
-  </div>
-  <button type="submit" class="btn">Submit!</button>
-</form>
+# <%#
+# <form action="/word">
+#   <div class="form-group">
+#     <label for="search">Search for a word</label>
+#     <input id="search" name="search" class="form-control" type="text">
+#   </div>
+#   <button type="submit" class="btn">Submit!</button>
+# </form>
 
-<% @words.each do |word| %>
-  <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
-<% end %>
+# <% @search.each do |word| %>
+#   <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+# <% end %>
+# %>

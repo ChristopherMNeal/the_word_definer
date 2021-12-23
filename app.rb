@@ -46,3 +46,8 @@ delete('/words/:id') do
   @word.delete()
   redirect to('/words')
 end
+
+# get('/word') do
+#   @search = Word.search(params[:search])
+#   erb(:words)
+# end
