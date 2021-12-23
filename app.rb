@@ -6,8 +6,7 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 get('/') do
-  @words = Word.all
-  erb(:words)
+  redirect to('/words')
 end
 
 get('/words') do
@@ -26,7 +25,7 @@ end
 
 post('/words') do
   add_word = params[:word_to_add]
-  word = Word.new({word: add_word})
+  word = Word.new({name: add_word})
   word.save()
   redirect to('/words')
 end
