@@ -46,3 +46,15 @@ delete('/words/:id') do
   @word.delete()
   redirect to('/words')
 end
+
+get('/words/:id/defis/:defi_id') do
+  @defi = Defi.find(params[:id].to_i())
+  erb(:defi)
+end
+
+post('/words/:id/defis') do
+  @word = Word.find(params[:id].to_i())
+  defi = Defi.new({name: params[:defi_name], word_id: @word.id, id: nil})
+  defi.save()
+  erb(:word)
+end
