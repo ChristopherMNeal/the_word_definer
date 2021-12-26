@@ -58,3 +58,11 @@ post('/words/:id/defis') do
   defi.save()
   erb(:word)
 end
+
+patch('/words/:id/defis/:defi_id') do
+  @word = Word.find(params[:id].to_i())
+  defi = Defi.find(params[:defi_id].to_i())
+  defi.update(params[:name], @word.id)
+  erb(:word)
+end
+
