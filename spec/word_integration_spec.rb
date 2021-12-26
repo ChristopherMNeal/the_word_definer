@@ -63,10 +63,15 @@ end
 describe('', {:type => :feature}) do
   it('deletes a definition') do
     visit('/words')
-    click_on('Hornswoggle')
-    click_on("Edit 'Hornswoggle'")
-    click_on("Delete word")
-    expect(page).to have_no_content('Hornswoggle')
+    click_on('Add a new word')
+    fill_in('word_to_add', :with => 'Snooker')
+    click_on('Go!')
+    click_on('Snooker')
+    fill_in('defi_name', :with => 'to beguile someone')
+    click_on('Add definition')
+    click_on('to beguile someone')
+    click_on("Delete definition")
+    expect(page).to have_no_content('to beguile someone')
   end
 end
 
