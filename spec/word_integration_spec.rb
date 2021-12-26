@@ -86,12 +86,12 @@ describe('', {:type => :feature}) do
   end
 end
 
-# describe('', {:type => :feature}) do
-#   it('') do
-#     visit('/words')
-#     click_on('')
-#     fill_in('', :with => 'Bamboozle')
-#     click_on('Go!')
-#     expect(page).to have_content('Bamboozle')
-#   end
-# end
+describe('', {:type => :feature}) do
+  it('tests the search function') do
+    visit('/words')
+    fill_in('search', :with => 'Hoodwink')
+    click_on('Go!')
+    save_and_open_page
+    expect(page).to have_selector(:css, ".search-result")
+  end
+end
