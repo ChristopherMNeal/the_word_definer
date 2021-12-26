@@ -13,6 +13,16 @@ describe('create a word path', {:type => :feature}) do
   end
 end
 
+describe('', {:type => :feature}) do
+  it('adds a definition then goes to the definition page') do
+    visit('/words')
+    click_on('Bamboozle')
+    fill_in('defi_name', :with => 'to trick someone')
+    click_on('Add definition')
+    expect(page).to have_content('to trick someone')
+  end
+end
+
 # describe('', {:type => :feature}) do
 #   it('') do
 #     visit('/words')
