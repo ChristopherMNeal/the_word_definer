@@ -75,6 +75,17 @@ describe('', {:type => :feature}) do
   end
 end
 
+describe('', {:type => :feature}) do
+  it('tests navigation links') do
+    visit('/words')
+    click_on('Hoodwink')
+    click_on('to con someone')
+    click_on('Back to Hoodwink')
+    click_on('Return to word list')
+    expect(page).to have_content('The Word Definer')
+  end
+end
+
 # describe('', {:type => :feature}) do
 #   it('') do
 #     visit('/words')
