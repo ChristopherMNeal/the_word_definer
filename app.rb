@@ -48,7 +48,7 @@ delete('/words/:id') do
 end
 
 get('/words/:id/defis/:defi_id') do
-  @defi = Defi.find(params[:id].to_i())
+  @defi = Defi.find(params[:defi_id].to_i())
   erb(:defi)
 end
 
