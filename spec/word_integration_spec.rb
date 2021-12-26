@@ -23,6 +23,17 @@ describe('', {:type => :feature}) do
   end
 end
 
+describe('', {:type => :feature}) do
+  it('') do
+    visit('/words')
+    click_on('Bamboozle')
+    click_on("Edit 'Bamboozle'")
+    fill_in('word', :with => 'Hornswoggle')
+    click_on('Update')
+    expect(page).to have_content('Hornswoggle')
+  end
+end
+
 # describe('', {:type => :feature}) do
 #   it('') do
 #     visit('/words')
