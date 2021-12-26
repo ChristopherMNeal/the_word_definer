@@ -66,3 +66,9 @@ patch('/words/:id/defis/:defi_id') do
   erb(:word)
 end
 
+delete('/words/:id/defis/:defi_id') do
+  defi = Defi.find(params[:defi_id].to_i())
+  defi.delete
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
+end
