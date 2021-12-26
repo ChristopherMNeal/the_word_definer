@@ -1,6 +1,6 @@
 require 'rspec'
 require 'word'
-require 'defin'
+require 'defi'
 require 'pry'
 
 describe '#Word' do
