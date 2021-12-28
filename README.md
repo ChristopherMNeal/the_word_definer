@@ -1,8 +1,8 @@
 # _The Word Definer_
 
-#### Created By _**Christopher Neal**_
+#### _Ruby week 2 Routing in Ruby Code Review project for Epicodus_
 
-#### _An application to write your own word definitions_
+#### Created By: **Christopher Neal**
 
 ## Technologies Used
 
@@ -19,15 +19,15 @@ _This project was created for Epicodus bootcamp to show proficiency in routing i
 
 ## Setup/Installation Requirements
 
-* _Clone the GitHub [repository](https://github.com/christophermneal/the_word_definer) or download and open the Zip on your local machine._
+* Clone the GitHub repository: [https://github.com/christophermneal/the_word_definer](https://github.com/christophermneal/the_word_definer)
+* From the main project directory, enter `bundle install` in the terminal to populate gems.
+* Enter `rspec` into the terminal to confirm passing of all tests.
+* Enter `ruby app.rb` to run the program with Sinatra.
+* Open browswer and enter the url http://localhost:4567/ unless otherwise prompted in the terminal.
 
 ## Known Bugs
 
 _None at this time_
-
-## Future Updates
-
-* __
 
 ## License
 
